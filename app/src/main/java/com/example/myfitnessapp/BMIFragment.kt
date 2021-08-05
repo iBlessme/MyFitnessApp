@@ -37,7 +37,9 @@ class BMIFragment : Fragment() {
 
         }
         calculateBtn.setOnClickListener {
-            cadChanger()
+            if(edtHeight.text != null && edtWeight.text != null){
+                cadChanger()
+            }
         }
     }
 
