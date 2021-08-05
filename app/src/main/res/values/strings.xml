@@ -2,4 +2,6 @@
     <string name="app_name">MyFitnessApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start service</string>
+    <string name="stop">Stop service</string>
 </resources>
