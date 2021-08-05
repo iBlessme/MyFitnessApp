@@ -14,7 +14,7 @@ class MainView : AppCompatActivity() {
         val steps = StepsFragment()
         val food = FoodFragment()
 
-        makeCurrentFragment(BMI)
+       // makeCurrentFragment(BMI)
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.BMIFr -> makeCurrentFragment(BMI)
