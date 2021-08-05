@@ -3,12 +3,196 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BMIFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/Exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="пол"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мужской"
+            app:layout_constraintEnd_toStartOf="@+id/btnWoman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Gender" />
+
+        <Button
+            android:id="@+id/btnWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Женский"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/Gender"
+            app:layout_constraintTop_toBottomOf="@+id/Gender" />
+
+        <TextView
+            android:id="@+id/Height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="400dp"
+            android:text="Рост"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/Gender"
+            app:layout_constraintStart_toStartOf="@+id/Gender"
+            app:layout_constraintTop_toBottomOf="@+id/Gender" />
+
+        <EditText
+            android:id="@+id/edtHeight"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Рост (см)"
+            app:layout_constraintEnd_toEndOf="@+id/Height"
+            app:layout_constraintStart_toStartOf="@+id/Height"
+            app:layout_constraintTop_toBottomOf="@+id/Height" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/Weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Вес "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/edtHeight"
+            app:layout_constraintStart_toStartOf="@+id/edtHeight"
+            app:layout_constraintTop_toBottomOf="@+id/edtHeight" />
+
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Вес (кг)"
+            app:layout_constraintEnd_toEndOf="@+id/Weight"
+            app:layout_constraintStart_toStartOf="@+id/Weight"
+            app:layout_constraintTop_toBottomOf="@+id/Weight" />
+
+        <ImageButton
+            android:layout_width="100sp"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtWeight"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/calculateBtn"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="40dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/bmitext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="30dp"
+                    android:text="BMI Calculator"
+                    android:textAlignment="center"
+                    android:textColor="#474747"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/disclamer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bmitext"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Предупреждение"
+                    android:textAlignment="center"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/yourBmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="30dp"
+                    android:padding="5dp"
+                    android:text="BMI"
+                    android:textAlignment="center"
+                    android:textColor="#434343"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/res"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yourBmi"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:padding="5dp"
+                    android:text="Результат"
+                    android:textAlignment="center"
+                    android:textColor="#EF3B36"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/res"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="5dp"
+                    android:text="Отзыв"
+                    android:textAlignment="center"
+                    android:textColor="#5DFF24"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
