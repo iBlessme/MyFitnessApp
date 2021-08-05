@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="BMI калькулятор"
+        android:id="@+id/BMIFr"
+        android:icon="@drawable/ic_baseline_calculate_24"/>
+    <item
+        android:title="Шагомер"
+        android:id="@+id/StepFr"
+        android:icon="@drawable/ic_baseline_directions_run_24"/>
+    <item
+        android:title="Еда"
+        android:id="@+id/FoodFr"
+        android:icon="@drawable/ic_baseline_fastfood_24"/>
+
+</menu>
