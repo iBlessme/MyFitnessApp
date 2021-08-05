@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_b_m_i.*
@@ -39,6 +40,8 @@ class BMIFragment : Fragment() {
         calculateBtn.setOnClickListener {
             if(edtHeight.text != null && edtWeight.text != null){
                 cadChanger()
+            }else{
+                Toast.makeText(this.context, "Заполните данные", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -63,7 +66,7 @@ class BMIFragment : Fragment() {
             feedback.setTextColor(Color.RED)
             res.setTextColor(Color.RED)
         } else {
-            feedback.text = "У вас нормальная масса тела. Наслаждаться !"
+            feedback.text = "У вас нормальная масса тела. Наслаждайтесь !"
             feedback.setTextColor(Color.GREEN)
             yourBmi.setTextColor(Color.GREEN)
             res.setTextColor(Color.GREEN)
